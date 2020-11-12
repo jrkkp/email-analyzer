@@ -6,7 +6,8 @@ use Email::Simple;
 use File::Slurper 'read_text';
 use List::Util qw(pairs);
 
-my $text = read_text('email2.txt');
+my ($file) = @ARGV;
+my $text = read_text($file);
 my $email = Email::Simple->new($text);
 
 my $header = $email->header_obj;
